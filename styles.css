@@ -1,0 +1,98 @@
+/* ตั้งค่าพื้นหลังหลัก */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1D1D1D; /* สีพื้นหลัง */
+    color: #FFFFFF; /* สีตัวอักษร */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* จัดตำแหน่งเนื้อหา */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* กล้องและพื้นหลัง */
+#webcam {
+    border-radius: 15px; /* ความโค้งมน */
+    background-color: #333333; /* พื้นหลังสีเทาเข้ม */
+    border: 10px solid #555555; /* กรอบสีเทา */
+    width: 100%; /* ยืดตามขนาดหน้าจอ */
+    max-width: 800px; /* จำกัดความกว้างสูงสุด */
+    height: auto; /* รักษาสัดส่วน */
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 15px; /* ให้ Overlay มีความโค้งมนตามกล้อง */
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+/* คำใบ้ */
+#hint {
+    margin-bottom: 15px;
+    font-size: 1.0rem;
+    font-weight: bold;
+}
+
+/* ผลลัพธ์ */
+#result {
+    margin-top: 15px;
+    font-size: 1.0rem;
+    font-weight: bold;
+}
+
+/* ผลลัพธ์: ตอบถูก */
+.correct {
+    color: #00FF00; /* สีเขียว */
+}
+
+/* ผลลัพธ์: ตอบผิด */
+.incorrect {
+    color: #FF0000; /* สีแดง */
+}
+
+/* ปุ่ม Restart */
+/* ปุ่ม Restart */
+.restart-button {
+    background-color: #000000; /* สีพื้นหลังดำ */
+    color: #FFFFFF; /* สีตัวอักษรขาว */
+    border: none;
+    padding: 10px 20px; /* ลดขนาด padding */
+    font-size: 1rem; /* ลดขนาดตัวอักษร */
+    border-radius: 30px; /* มุมมน */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+}
+
+/* เอฟเฟกต์เมื่อ hover */
+.restart-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* เงาสีขาว */
+    background-color: #333333; /* เปลี่ยนเป็นสีเทาเข้มเมื่อ hover */
+}
+
+/* เอฟเฟกต์เมื่อคลิก */
+.restart-button:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2); /* เงาสีขาวอ่อน */
+    background-color: #444444; /* เปลี่ยนเป็นสีเทาเข้มขึ้น */
+}
+
